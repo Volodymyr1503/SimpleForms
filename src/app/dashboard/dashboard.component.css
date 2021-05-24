@@ -1,0 +1,43 @@
+.wrapped-content {
+    margin: 20px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.top {
+    width: 20%;
+    background-color: teal;
+    display: flex;
+    flex-direction: column;
+    padding: 10px 0;
+}
+hr {
+    background-color: black;
+    width: 40%;
+    height: 2px;
+}
+.heroes-menu {
+    display: flex;
+    flex-direction: column;
+}
+a {
+    position: relative;
+    margin: 15px 0;
+    text-decoration: none;
+    color: white;
+}
+a::after {
+    position: absolute;
+    top: 4px;
+    left: 85px;
+    content: "";
+    width: 10px;
+    height: 10px;
+    background-color: yellowgreen;
+    transform: rotate(45deg);
+    animation-duration: infinity;
+}
+a:hover {
+    color: tomato;
+}
+
