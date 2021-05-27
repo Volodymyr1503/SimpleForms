@@ -1,0 +1,48 @@
+<h3>Cart</h3>
+<p>
+  <a routerLink="/shipping">Shipping Prices</a>
+</p>
+<div class="cart-item" *ngFor="let item of items">
+  <span>{{ item.name }}</span>
+  <span>{{ item.price | currency }}</span>
+</div>
+
+<form novalidate #myForm="ngForm" (ngSubmit)="onSubmit()">
+  <h1>Purchase form</h1>
+  <hr>
+
+  <div>
+    <label for="name">
+      Name
+    </label>
+    <input id="name" type="text" name="name" ngModel required #nameControl="ngModel" minlength="5">
+    <span style="color: brown" *ngIf="nameControl.invalid">Name must contain more than 5 characters!</span>
+    <span style="color: green" *ngIf="nameControl.valid">Success</span>
+  </div>
+
+  <div>
+    <label for="phone">
+      Phone number
+    </label>
+    <input id="phone" type="phone" name="phone" ngModel required #phoneControl="ngModel" minlength="10">
+    <span style="color: brown" *ngIf="phoneControl.invalid">It must be format 0123456789</span>
+    <span style="color: green" *ngIf="phoneControl.valid">Success</span>
+  </div>
+  <div>
+    <label for="address">
+      Address
+    </label>
+    <input id="address" type="text"  name="address" ngModel required #addressControl="ngModel" minlength="5">
+    <span style="color: brown" *ngIf="addressControl.invalid">Ex.: 1, StreetName nr</span>
+    <span style="color: green" *ngIf="addressControl.valid">Success</span>
+  </div>
+  <div>
+    <label for="email">
+      E-mail
+    </label>
+    <input id="email" type="email"  name="email" ngModel required #emailControl="ngModel" email>
+    <span style="color: brown" *ngIf="emailControl.invalid">Ex.: yourname@example.com</span>
+    <span style="color: green" *ngIf="emailControl.valid">Success</span>
+  </div>
+  <button class="button" type="submit">Purchase</button>
+</form>

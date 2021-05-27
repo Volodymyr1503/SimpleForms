@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductAlertsComponent} from '../product-alerts/product-alerts.component';
 import { products } from '../products';
-import {MatButtonModule} from '@angular/material/button';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-product-list',
