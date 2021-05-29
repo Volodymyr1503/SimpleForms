@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ProductAlertsComponent } from './product-alerts.component';
+import { SubscriptionMenuComponent } from './subscription-menu.component';
 
-describe('ProductAlertsComponent', () => {
-  let component: ProductAlertsComponent;
-  let fixture: ComponentFixture<ProductAlertsComponent>;
+describe('SubscriptionMenuComponent', () => {
+  let component: SubscriptionMenuComponent;
+  let fixture: ComponentFixture<SubscriptionMenuComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ProductAlertsComponent ]
+      declarations: [ SubscriptionMenuComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ProductAlertsComponent);
+    fixture = TestBed.createComponent(SubscriptionMenuComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

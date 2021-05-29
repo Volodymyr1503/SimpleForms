@@ -9,8 +9,4 @@
     <p *ngIf="product.description">
         Description: {{ product.description }}
     </p>
-    <button mat-raised-button color="warn" (click)="share()">
-        Share
-    </button>
-    <app-product-alerts [product]="product" (notify)="onNotify()"></app-product-alerts>
 </div>

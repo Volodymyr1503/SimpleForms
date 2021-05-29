@@ -1,6 +1,8 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { NgForm, Validators } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
 import { CartService } from '../cart.service';
+import { PurchaseFormComponent} from '../purchase-form/purchase-form.component';
+
+
 
 
 @Component({
@@ -10,17 +12,12 @@ import { CartService } from '../cart.service';
 })
 export class CartComponent implements OnInit {
   items = this.cartService.getItems();
-  @ViewChild('myForm') myForm: NgForm;
+  
 
   constructor(
     private cartService: CartService,
-
   ) { }
-  onSubmit(): void {
-    // Process checkout data here
-    this.items = this.cartService.clearCart();
-    console.warn('Your order has been submitted', this.myForm.value);
-  }
+
   ngOnInit(): void {
   }
 
