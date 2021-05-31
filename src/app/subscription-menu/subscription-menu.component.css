@@ -1,0 +1,13 @@
+mat-card {
+    background: rgba(cornflowerblue, .2);
+    border-radius: 0 50px 0 0;
+}
+
+
+mat-card-title {
+    color: crimson;
+}
+
+mat-card-subtitle {
+    color: chocolate;
+}

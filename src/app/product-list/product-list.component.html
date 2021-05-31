@@ -1,12 +1,15 @@
 <h2>Products</h2>
 
-<div *ngFor="let product of products">
-    <h3>
-        <a [title]="product.name + ' details'" [routerLink]="['/products', product.id]">
-            {{ product.name }}
-        </a>
-    </h3>
-    <p *ngIf="product.description">
-        Description: {{ product.description }}
-    </p>
-</div>
+<mat-grid-list cols="3" rowHeight="2:1">
+    <mat-grid-tile *ngFor="let product of products">
+        <h3>
+            <a [title]="product.name + ' details'" [routerLink]="['/products', product.id]">
+                {{ product.name }}
+            </a>
+        </h3>
+        <p *ngIf="product.description">
+            Description: {{ product.description }}
+        </p>
+    </mat-grid-tile>
+</mat-grid-list>
+

@@ -8,7 +8,7 @@
       </label>
       <input id="name" type="text" name="name" ngModel required #nameControl="ngModel" minlength="5">
       <span *ngIf="nameControl.touched">
-        <span style="color: brown" *ngIf="nameControl.invalid">Name must contain more than 5 characters!</span>
+        <span style="color: brown" *ngIf="nameControl.invalid">Must contain more than 5 characters!</span>
         <span style="color: green" *ngIf="nameControl.valid">Success</span>
       </span>
     </div>

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { products } from '../products';
 import { MatButtonModule } from '@angular/material/button';
+import { MatGridListModule } from '@angular/material/grid-list';
 
 @Component({
   selector: 'app-product-list',
@@ -10,10 +11,6 @@ import { MatButtonModule } from '@angular/material/button';
 export class ProductListComponent implements OnInit {
   products = products;
   constructor() { }
-
-  share() {
-    window.alert('The product has been shared!');
-  }
 
   ngOnInit(): void {
   }

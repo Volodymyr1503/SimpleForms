@@ -13,7 +13,6 @@ import { PurchaseFormComponent} from '../purchase-form/purchase-form.component';
 export class CartComponent implements OnInit {
   items = this.cartService.getItems();
   
-
   constructor(
     private cartService: CartService,
   ) { }
