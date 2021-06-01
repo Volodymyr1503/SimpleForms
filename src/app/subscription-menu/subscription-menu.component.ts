@@ -19,14 +19,26 @@ export class SubscriptionMenuComponent implements OnInit {
   constructor() { 
     this.subForm = new FormGroup({
       fullName: new FormGroup({
-        firstName: new FormControl(" ", [Validators.required, Validators.minLength(6)]),
-        lastName: new FormControl(" ", [Validators.required, Validators.minLength(6)])
+        firstName: new FormControl(" ", [Validators.required, Validators.minLength(4)]),
+        lastName: new FormControl(" ", [Validators.required, Validators.minLength(4)])
       }),
+      userName: new FormControl(" ", [
+         Validators.required, 
+         Validators.minLength(5),
+         Validators.maxLength(12)
+      ]),
+      password: new FormControl(null, Validators.compose([
+        Validators.required,
+        Validators.pattern(/\d/),
+        Validators.pattern(/[A-Z]/),
+        Validators.pattern(/[a-z]/),
+        Validators.minLength(10)
+      ])),
       emails: new FormArray([])
     });
   }
   addControl() {
-    this.emailsFormArray.push(new FormControl("yournick@example.com", [Validators.required, Validators.email]))
+    this.emailsFormArray.push(new FormControl(" ", [Validators.required, Validators.email]))
   }
   removeControl(index: number) {
     this.emailsFormArray.removeAt(index);
@@ -38,6 +50,7 @@ export class SubscriptionMenuComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    
   }
 
 }
