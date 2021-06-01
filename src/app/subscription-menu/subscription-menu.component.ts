@@ -19,10 +19,10 @@ export class SubscriptionMenuComponent implements OnInit {
   constructor() { 
     this.subForm = new FormGroup({
       fullName: new FormGroup({
-        firstName: new FormControl(" ", [Validators.required, Validators.minLength(4)]),
-        lastName: new FormControl(" ", [Validators.required, Validators.minLength(4)])
+        firstName: new FormControl(null, [Validators.required, Validators.minLength(4)]),
+        lastName: new FormControl(null, [Validators.required, Validators.minLength(4)])
       }),
-      userName: new FormControl(" ", [
+      userName: new FormControl(null, [
          Validators.required, 
          Validators.minLength(5),
          Validators.maxLength(12)
