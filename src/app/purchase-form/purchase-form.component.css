@@ -2,7 +2,9 @@ form {
     margin: 20px 10px;
     padding: 20px 10px;
     border: 2px solid teal;
+    color: white;
     text-align: center;
+    background-color: rgba(39, 38, 38, 0.56);
 }
 form div {
     display: flex;
@@ -13,6 +15,7 @@ form div {
 span {
     margin-top: -15px;
     font-size: 12px;
+    color: white;
 }
 hr {
     margin-top: -10px;

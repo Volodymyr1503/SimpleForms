@@ -1,5 +1,6 @@
 <form novalidate #myForm="ngForm" (ngSubmit)="onSubmit()">
-    <h1>Purchase form</h1>
+    <h1>Template-Driven Form</h1>
+    <h3 *ngIf="purchased">Thank you!)</h3>
     <hr>
   
     <div>
@@ -8,8 +9,8 @@
       </label>
       <input id="name" type="text" name="name" ngModel required #nameControl="ngModel" minlength="5">
       <span *ngIf="nameControl.touched">
-        <span style="color: brown" *ngIf="nameControl.invalid">Must contain more than 5 characters!</span>
-        <span style="color: green" *ngIf="nameControl.valid">Success</span>
+        <span *ngIf="nameControl.invalid">Must contain more than 5 characters!</span>
+        <span *ngIf="nameControl.valid">Success</span>
       </span>
     </div>
   
@@ -19,8 +20,8 @@
       </label>
       <input id="phone" type="phone" name="phone" ngModel required #phoneControl="ngModel" minlength="10">
       <span *ngIf="phoneControl.touched">
-        <span style="color: brown" *ngIf="phoneControl.invalid">It must be format 0123456789</span>
-        <span style="color: green" *ngIf="phoneControl.valid">Success</span>
+        <span *ngIf="phoneControl.invalid">It must be format 0123456789</span>
+        <span *ngIf="phoneControl.valid">Success</span>
       </span>
     </div>
 
@@ -30,8 +31,8 @@
       </label>
       <input id="address" type="text"  name="address" ngModel required #addressControl="ngModel" minlength="5">
       <span *ngIf="addressControl.touched">
-        <span style="color: brown" *ngIf="addressControl.invalid">Ex.: 1, StreetName nr</span>
-        <span style="color: green" *ngIf="addressControl.valid">Success</span>
+        <span *ngIf="addressControl.invalid">Ex.: 1, StreetName nr</span>
+        <span *ngIf="addressControl.valid">Success</span>
       </span>
     </div>
 
@@ -41,15 +42,23 @@
       </label>
       <input id="email" type="email"  name="email" ngModel required #emailControl="ngModel" email>
       <span *ngIf="emailControl.touched">
-        <span style="color: brown" *ngIf="emailControl.invalid">Ex.: yourname@example.com</span>
-        <span style="color: green" *ngIf="emailControl.valid">Success</span>
+        <span *ngIf="emailControl.invalid">Ex.: yourname@example.com</span>
+        <span *ngIf="emailControl.valid">Success</span>
+      </span>
+    </div>
+
+    <div>
+      <label for="password">
+        Create password
+      </label>
+      <input id="password" type="password"  name="password" ngModel required 
+          #passwordControl="ngModel" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
+      <span *ngIf="passwordControl.touched">
+        <span *ngIf="passwordControl.invalid">It must have at least one integer, one capital letter</span>
+        <span *ngIf="passwordControl.valid">Success</span>
       </span>
     </div>
     
     <button mat-raised-button color="primary" type="submit" [disabled]="myForm.invalid">Purchase</button>
 </form>
 
-
-<div *ngIf="submitted && myForm.valid">
-  <app-subscription-menu></app-subscription-menu>
-</div>
