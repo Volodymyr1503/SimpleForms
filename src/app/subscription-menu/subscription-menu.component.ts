@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, FormArray, Validators } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
+import { MatIconModule } from '@angular/material/icon'
 
 @Component({
   selector: 'app-subscription-menu',
@@ -10,6 +11,7 @@ import { MatCardModule } from '@angular/material/card';
 })
 export class SubscriptionMenuComponent implements OnInit {
   subForm: FormGroup;
+  title = "F"
 
   subscribed = false;
   get emailsFormArray() {
@@ -18,10 +20,6 @@ export class SubscriptionMenuComponent implements OnInit {
 
   constructor() { 
     this.subForm = new FormGroup({
-      fullName: new FormGroup({
-        firstName: new FormControl(null, [Validators.required, Validators.minLength(4)]),
-        lastName: new FormControl(null, [Validators.required, Validators.minLength(4)])
-      }),
       userName: new FormControl(null, [
          Validators.required, 
          Validators.minLength(5),
@@ -37,6 +35,7 @@ export class SubscriptionMenuComponent implements OnInit {
       emails: new FormArray([])
     });
   }
+  
   addControl() {
     this.emailsFormArray.push(new FormControl(" ", [Validators.required, Validators.email]))
   }
@@ -49,8 +48,9 @@ export class SubscriptionMenuComponent implements OnInit {
     this.subForm.reset();
   }
 
+  
   ngOnInit(): void {
-    
+
   }
 
 }

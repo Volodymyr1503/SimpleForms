@@ -5,28 +5,31 @@
     </mat-card-header>
     <mat-card-content>
         <form novalidate  [formGroup]="subForm" (ngSubmit)="onSubscribe()">
-            <div formGroupName="fullName">
-                <p>Personal Info: </p>
-                <label>First Name:
-                    <input type="text" placeholder="First Name" formControlName="firstName">
-                </label>
-                <label>Last Name: 
-                    <input type="text" placeholder="Last Name" formControlName="lastName">
-                </label>
-            </div>
             <div>
                 <p>Credentials: </p>
                 <label>Username: 
                     <input type="text" placeholder="Username" formControlName="userName">
+                    <p class="error"
+                        *ngIf="subForm.controls['userName'].invalid && subForm.controls['userName'].touched">
+                        Username must contain 5-12 characters
+                    </p>
                 </label>
                 <label>Password: 
                     <input type="password" placeholder="Your password" formControlName="password">
+                    <p class="error"
+                        *ngIf="subForm.controls['password'].invalid && subForm.controls['password'].touched">
+                        Should contain one integer, capital and lower letter
+                    </p>
                 </label>
             </div>
             <div formArrayName="emails">
                 <label>You must have at least one email!</label>
                 <div *ngFor="let control of emailsFormArray.controls; let i = index">
                     <input type="email" [formControlName]="i">
+                    <p class="error-email" 
+                    *ngIf="subForm.controls['emails'].invalid && subForm.controls['emails'].touched">
+                    Input correct email format
+                     </p>
                     <button mat-raised-button color="warn" (click)="removeControl(i)">Delete Email</button>
                 </div>
                 <button mat-raised-button color="primary" (click)="addControl()">Add Email</button>
@@ -36,7 +39,9 @@
                 color="accent" 
                 [disabled]="subForm.invalid" 
                 type="submit"
-                (click)="onSubscribe()">Subscribe</button>
+                (click)="onSubscribe()">Subscribe
+            </button>
+            <div id="er"></div>
         </form>
     </mat-card-content>
 </mat-card>

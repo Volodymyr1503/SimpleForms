@@ -4,3 +4,25 @@ mat-card {
     border-radius: 10px solid ;
 }
 
+input.ng-touched.ng-invalid {
+    border-left:solid red 4px;
+    background-color: rgb(233, 183, 183);
+}
+input.ng-touched.ng-valid {
+    border-left:solid green 4px;
+    background-color: rgb(89, 170, 9);
+}
+
+.error {
+    color: rgb(230, 107, 107);
+    text-transform: none;
+    margin-top: -15px;
+    margin-left: 70px;
+}
+
+.error-email {
+    color: rgb(230, 107, 107);
+    text-transform: none;
+    margin-top: -15px;
+    margin-left: 0;
+}
